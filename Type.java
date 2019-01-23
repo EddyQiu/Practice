@@ -5,7 +5,7 @@
         ADULT   (1),
         SENIOR  (0.25);
 
-        private rates;
+        private Double rates;
         types(double _rates) {
             this.rates = _rates;
         }

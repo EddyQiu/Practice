@@ -1,8 +1,8 @@
 public class Account{
 
-    String name
-    String type
-    Double amount
+    String name;
+    String type;
+    Double amount;
 
     public Account(String _name, String _type, int _amount){
         this.name = _name;
