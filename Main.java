@@ -12,7 +12,7 @@ public class Main{
 
         CreateAccount(
         "Tim", 
-        "CONCESSION",
+        "SENIOR",
         0.0);
 
         CustomerList.get(1).SetName("Greg");
@@ -44,7 +44,7 @@ public class Main{
         for (Map.Entry<Integer, Account> entry : map.entrySet()){
             count++;
             Account temp = entry.getValue();
-            System.out.println(temp.getName(), temp.getType());
+            System.out.println(temp.getName() + " and " +  temp.getType());
             if(count >= _count)
                 return;
         }
