@@ -41,7 +41,7 @@ public class Account{
         return this.type;
     }
 
-    public int GetAmount(){
+    public Double GetAmount(){
         return this.amount;
     }
 
