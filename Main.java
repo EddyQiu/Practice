@@ -8,7 +8,7 @@ public class Main{
     static int gen_count = 0;
 
     public static void main(String[] args){
-        System.out.println("Testing ... ");
+        System.out.println("Welcome to Travels");
 
         CreateAccount(
         "Tim", 
@@ -17,8 +17,6 @@ public class Main{
 
         CustomerList.get(1).SetName("Greg");
         PrintX(1);
-        //System.out.println(CustomerList.get(1).GetType());
-    
     }
 
     // Temporarily generates unique ID and increments each time an account is created
@@ -41,12 +39,12 @@ public class Main{
     // Testing functions
     public static void PrintX(int _count){
         int count = 0;
-        for (Map.Entry<Integer, Account> entry : map.entrySet()){
+        Iterator it = CustomerList.entrySet().iterator();
+        while(it.hasNext() && count < _count){
             count++;
-            Account temp = entry.getValue();
-            System.out.println(temp.getName() + " and " +  temp.getType());
-            if(count >= _count)
-                return;
+            Map.Entry<Integer, Account> pair = (Map.Entry)it.next();
+            Account temp = pair.getValue();
+            System.out.println(temp.GetName() + " has a " + temp.GetType() + " travel card");
         }
     }
 
