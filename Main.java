@@ -16,7 +16,8 @@ public class Main{
         0.0);
 
         CustomerList.get(1).SetName("Greg");
-        System.out.println(CustomerList.get(1).GetType());
+        PrintX(1);
+        //System.out.println(CustomerList.get(1).GetType());
     
     }
 
@@ -35,6 +36,18 @@ public class Main{
     // Deletes an account
     public static void DeleteAccount(int _id){
         CustomerList.remove(_id);
+    }
+
+    // Testing functions
+    public static void PrintX(int _count){
+        int count = 0;
+        for (Map.Entry<Integer, Account> entry : map.entrySet()){
+            count++;
+            Account temp = entry.getValue();
+            System.out.println(temp.getName(), temp.getType());
+            if(count >= _count)
+                return;
+        }
     }
 
 }
