@@ -15,8 +15,13 @@ public class Main{
         "SENIOR",
         0.0);
 
+        CreateAccount(
+        "Bob", 
+        "Adult",
+        17.30);
+
         CustomerList.get(1).SetName("Greg");
-        PrintX(1);
+        PrintX(2);
     }
 
     // Temporarily generates unique ID and increments each time an account is created
@@ -44,7 +49,7 @@ public class Main{
             count++;
             Map.Entry<Integer, Account> pair = (Map.Entry)it.next();
             Account temp = pair.getValue();
-            System.out.println(temp.GetName() + " has a " + temp.GetType() + " travel card");
+            System.out.println(temp.GetId() + " / " + temp.GetName() + " / " + temp.GetType() + " / $" + temp.GetAmount());
         }
     }
 
