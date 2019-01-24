@@ -21,7 +21,8 @@ public class Main{
         17.30);
 
         CustomerList.get(1).SetName("Greg");
-        PrintX(2);
+        CustomerList.get(1).AddAmount(10.0);
+        PrintAll();
     }
 
     // Temporarily generates unique ID and increments each time an account is created
@@ -41,7 +42,18 @@ public class Main{
         CustomerList.remove(_id);
     }
 
-    // Testing functions
+    // TESTING
+    //Print all entries
+    public static void PrintAll(){
+        Iterator it = CustomerList.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<Integer, Account> pair = (Map.Entry)it.next();
+            Account temp = pair.getValue();
+            System.out.println(temp.GetId() + " / " + temp.GetName() + " / " + temp.GetType() + " / $" + temp.GetAmount());
+        }
+    }
+
+    // Print X amount of entries
     public static void PrintX(int _count){
         int count = 0;
         Iterator it = CustomerList.entrySet().iterator();
