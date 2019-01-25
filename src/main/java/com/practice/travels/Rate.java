@@ -1,4 +1,4 @@
-package travels;
+package com.practice.travels;
 
     public enum Rate{
         CHILD   (0.75),

@@ -1,11 +1,17 @@
-package travels;
+package com.practice.travels;
 
-import java.util.*; 
+import java.util.*;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
+@RestController
+@SpringBootApplication
 public class Main{
 
     static Map<Integer,Account>CustomerList = new HashMap<Integer, Account>();
@@ -14,21 +20,31 @@ public class Main{
     static int gen_count = 0;
 
     public static void main(String[] args){
+        SpringApplication.run(Main.class, args);
         System.out.println("Welcome to Travels");
 
-        CreateAccount(
-        "Tim", 
-        "SENIOR",
-        0.0);
+        // CreateAccount(
+        // "Tim", 
+        // "SENIOR",
+        // 0.0);
 
-        CreateAccount(
-        "Bob", 
-        "Adult",
-        17.30);
+        // CreateAccount(
+        // "Bob", 
+        // "Adult",
+        // 17.30);
 
-        CustomerList.get(1).SetName("Greg");
-        CustomerList.get(1).AddAmount(10.0);
-        PrintAll();
+        // CustomerList.get(1).SetName("Greg");
+        // CustomerList.get(1).AddAmount(10.0);
+        // PrintAll();
+    }
+
+    @RequestMapping("/create")
+    public void createAccount(@RequestParam(value="name", required=true) String _name, 
+                                    @RequestParam(value="type", required=true) String _type,
+                                        @RequestParam(value="amount", required=true) Double _amount){
+
+        Account newAcc = CreateAccount(_name, _type, _amount);
+        System.out.println(newAcc.GetId() + " / " + newAcc.GetName() + " / " + newAcc.GetType() + " / $" + newAcc.GetAmount());
     }
 
     // Temporarily generates unique ID and increments each time an account is created
@@ -38,9 +54,10 @@ public class Main{
     }
 
     // Creates an account
-    public static void CreateAccount(String _name, String _type, Double _amount){
+    public static Account CreateAccount(String _name, String _type, Double _amount){
         Account Customer = new Account(GenerateId(), _name, _type, _amount);
         CustomerList.put(Customer.id, Customer);
+        return Customer;
     }
 
     // Deletes an account

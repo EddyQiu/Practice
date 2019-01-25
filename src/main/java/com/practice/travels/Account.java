@@ -1,4 +1,4 @@
-package travels;
+package com.practice.travels;
 
 public class Account{
 
