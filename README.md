@@ -1,2 +1,0 @@
-# Practice
-Practice and tests
