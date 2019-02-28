@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="cool.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css"> 
     
 
@@ -12,6 +10,13 @@
     </head>
 
     <body>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/client.js?onload=callback"></script>
+
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+        <script type="text/javascript" src="db.js"></script>
+
         <div>
             <p id="verdana_font">Cool Beans</p>
         </div>
@@ -33,7 +38,7 @@
             <input type="radio" name="Level" value="2"> 2<br>  
             <input type="radio" name="Level" value="3"> 3<br> 
         </div>
-        <button type="submit" class="testbutton">
+        <button type="button" class="testbutton">
              Send
         </button>
     </form>

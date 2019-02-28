@@ -1,4 +1,3 @@
-console.log("hello world");
 
 $(document).ready(function () {
     $('.testbutton').click(function (event) {
@@ -17,7 +16,11 @@ $(document).ready(function () {
             console.log("3");
         }
     })
+
+    //console.log(checkExists(uuid));
+
 })
+
 
 
 
